@@ -20,7 +20,7 @@
   --safe-b:env(safe-area-inset-bottom,0px);
   --safe-t:env(safe-area-inset-top,0px);
 }
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.6;overflow-x:hidden;display:flex;flex-direction:column;min-height:100vh}
 button{font-family:inherit;cursor:pointer;border:none;outline:none;background:none}
 a{text-decoration:none;color:inherit;cursor:pointer}
@@ -29,7 +29,7 @@ ul{list-style:none}
 input,select,textarea{font-family:inherit}
 
 /* ══ PAGES ══ */
-.page{display:none}.page.active{display:block;flex:1}.page.active{display:block}
+.page{display:none;max-width:100vw;overflow-x:hidden}.page.active{display:block;flex:1}
 
 /* ══ TOPBAR ══ */
 .topbar{background:#111;color:#aaa;font-size:12px;padding:7px 0;text-align:center}
@@ -292,7 +292,7 @@ footer{background:#111;color:#888;padding:56px 0 0}
   .hero h1{font-size:34px!important}
 }
 @media(max-width:560px){
-  .prod-grid{grid-template-columns:repeat(2,1fr)}
+  .prod-grid{grid-template-columns:repeat(2,1fr).field-row,.cc-row{grid-template-columns:1fr}}
   .why-grid,.foot-grid{grid-template-columns:1fr}
   .cart-page,.co-page{padding-bottom:calc(90px + var(--safe-b))}
   .prod-sec,.why-sec{padding:44px 0}
